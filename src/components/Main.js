@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
-
+import pic02 from '../images/2.jpg'
+import pic03 from '../images/3.jpg'
+import foto from '../images/1.jpg'
 class Main extends React.Component {
   render() {
     let close = (
@@ -31,7 +31,8 @@ class Main extends React.Component {
         >
           <h2 className="major">Introduccion</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={foto} style={{}}alt="" />
+            
           </span>
           <h2>MISION</h2>
           <p>
@@ -186,19 +187,19 @@ class Main extends React.Component {
           <ul className="icons">
             <li>
               <a
-                href="https://twitter.com/"
+                href="https://twitter.com/Jose70340939"
                 className="icon fa-twitter"
               >
                 <span className="label">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/" className="icon fa-facebook">
+              <a href="https://m.facebook.com/home.php?_rdr" className="icon fa-facebook">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/" className="icon fa-instagram">
+              <a href="https://www.instagram.com/fazlou98/" className="icon fa-instagram">
                 <span className="label">Instagram</span>
               </a>
             </li>
