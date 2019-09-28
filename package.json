@@ -2,8 +2,9 @@
   "name": "proyecto-beta",
   "description": "proyecto beta",
   "version": "1.0.0",
-  "author": "",
+  "author": "team",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "firebase": "^7.0.0",
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",

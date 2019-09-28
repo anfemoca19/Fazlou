@@ -1,7 +1,11 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Proyecto beta',
-    author: 'Andres',
+    author: 'team',
     description: 'Beta de proyecto',
   },
   plugins: [
