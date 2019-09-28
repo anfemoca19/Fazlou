@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "proyecto-beta",
+  "description": "proyecto beta",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "",
   "dependencies": {
+    "firebase": "^7.0.0",
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
     "gatsby-plugin-offline": "^3.0.6",
