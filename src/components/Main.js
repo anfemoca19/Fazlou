@@ -79,7 +79,7 @@ class Main extends React.Component {
               {/*className="field half"*/}
               <label htmlFor="email">Categoria de la meta</label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="email"
                 placeholder="Ejemplo: Laboral, Familiar, Educativo, Espiritual, Financiero, Deportivo."
@@ -87,8 +87,8 @@ class Main extends React.Component {
             </div>
 
             <div className="field">
-              <label htmlFor="message">Por que</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <label htmlFor="message1">Por que</label>
+              <textarea name="message1" id="message1" rows="4"></textarea>
             </div>
 
             <div class="form-group col-md-4">
@@ -102,8 +102,8 @@ class Main extends React.Component {
             </div>
 
             <div class="form-group col-md-4">
-              <label for="inputState">Prioridad</label>
-              <select id="inputState" class="form-control">
+              <label for="inputState1">Prioridad</label>
+              <select id="inputState1" class="form-control">
                 <option selected> </option>
                 <option>Alta</option>
                 <option>Media </option>
@@ -111,8 +111,8 @@ class Main extends React.Component {
               </select>
             </div>
             <div class="form-group col-md-4">
-              <label for="inputState">Complejidad</label>
-              <select id="inputState" class="form-control">
+              <label for="inputState3">Complejidad</label>
+              <select id="inputState3" class="form-control">
                 <option selected> </option>
                 <option>Alta</option>
                 <option>Media alta </option>
