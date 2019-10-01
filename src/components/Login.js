@@ -1,24 +1,36 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { auth } from '../firebase'
+import { navigate } from 'gatsby'
+import { getFirebase } from './firebase'
 
-const Login = props => {
+const Login = () => {
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  const [auth, setAuth] = useState()
 
   const handleEmail = e => setEmail(e.target.value)
-
   const handlePass = e => setPass(e.target.value)
 
-  const handleAuthUser = e => {
+  useEffect(() => {
+    const lazyApp = import('firebase/app')
+    const lazyAuth = import('firebase/auth')
+
+    Promise.all([lazyApp, lazyAuth])
+      .then(([firebase]) => {
+        setAuth(getFirebase(firebase).auth())
+      })
+      .catch(error => console.log(error.message))
+  })
+
+  const handleAuthUser = () => {
     auth
       .fetchSignInMethodsForEmail(email)
       .then(() => {
         return auth.signInWithEmailAndPassword(email, pass)
       })
       .then(() => {
-        return (window.location = '/main')
+        return navigate('/pagemain')
       })
       .catch(error => alert(error.message))
   }
@@ -63,7 +75,7 @@ const Login = props => {
             {/* </Link> */}
           </li>
           <li>
-            <Link to="/RegistroPage" style={{ borderBottom: 'none' }}>
+            <Link to="/pageregistro" style={{ borderBottom: 'none' }}>
               <input type="button" value="Registrar" />
             </Link>
           </li>
