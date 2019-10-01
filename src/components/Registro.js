@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react'
-import { db } from '../firebase'
-import { auth } from '../firebase'
+import React, { Fragment, useState, useEffect } from 'react'
+import { navigate } from 'gatsby'
+import { getFirebase } from './firebase'
 
 const Registro = () => {
   const [name, setName] = useState('')
@@ -11,19 +11,29 @@ const Registro = () => {
   const [municipio, setMunicipio] = useState('')
   const [pais, setPais] = useState('')
 
+  const [auth, setAuth] = useState()
+  const [db, setDb] = useState()
+
   const handleName = e => setName(e.target.value)
-
   const handleApellido = e => setApellido(e.target.value)
-
   const handleEmail = e => setEmail(e.target.value)
-
   const handlePass = e => setPass(e.target.value)
-
   const handleDepartamento = e => setDepartamento(e.target.value)
-
   const handleMunicipio = e => setMunicipio(e.target.value)
-
   const handlePais = e => setPais(e.target.value)
+
+  useEffect(() => {
+    const lazyApp = import('firebase/app')
+    const lazyAuth = import('firebase/auth')
+    const lazyDatabase = import('firebase/database')
+
+    Promise.all([lazyApp, lazyDatabase, lazyAuth])
+      .then(([firebase]) => {
+        setAuth(getFirebase(firebase).auth())
+        setDb(getFirebase(firebase).database())
+      })
+      .catch(error => console.log(error.message))
+  })
 
   const handleCreateUser = e => {
     e.preventDefault()
@@ -53,7 +63,7 @@ const Registro = () => {
         .createUserWithEmailAndPassword(email, pass)
         .then(() => {
           alert('Usuario insertado con exito 😎 ')
-          return (window.location = '/')
+          navigate('/')
         })
         .catch(error => {
           alert(error.message)
@@ -141,7 +151,7 @@ const Registro = () => {
           <li>
             <input
               type="button"
-              value="ENVIAR"
+              value="REGISTRARSE"
               className="special"
               onClick={handleCreateUser}
             />
