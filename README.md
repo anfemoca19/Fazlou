@@ -1,3 +1,1 @@
-## Beta v01
-
-## App
+## beta v01 = https://fazlou-beta.netlify.com 😎
