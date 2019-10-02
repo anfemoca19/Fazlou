@@ -56,7 +56,7 @@ const Registro = () => {
         pais,
       }
       // Insertar en base de datos
-      db.ref('newUser').push({ user })
+      db.ref('users').push({ user })
 
       //insertar pass and email en auth
       auth
