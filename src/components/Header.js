@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import DataUser from '../components/GetDataUser'
+import { Link } from 'gatsby'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+    <DataUser />
     <div className="logo">
       <span className="icon fa-diamond"></span>
     </div>
@@ -53,6 +56,9 @@ const Header = props => (
           >
             CONTACTO
           </a>
+        </li>
+        <li>
+          <Link to="/">SALIR</Link>
         </li>
       </ul>
     </nav>
